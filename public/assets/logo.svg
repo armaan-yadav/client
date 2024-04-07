@@ -1,0 +1,14 @@
+      <!-- <svg xmlns="http://www.w3.org/2000/svg" width="210" height="50">
+        <path d="M 10 10 L 30 10 L 30 30 L 10 30 Z" fill="none" stroke="white"  />
+        <text x="35" y="30" font-family="sans-serif" font-size="24" font-weight="500" fill="white" >CodePencil</text>
+      </svg> -->
+
+
+<svg xmlns="http://www.w3.org/2000/svg" width="210" height="50">
+  <path d="M 10 10 L 30 10 L 30 30 L 10 30 Z" fill="white" stroke="white"  />
+  <!-- Adjusted pencil coordinates to fit within the square -->
+  <svg x="15" y="14" width="12" height="12" viewBox="0 0 24 24">
+    <path fill="black" d="M7.127 22.562l-7.127 1.438 1.438-7.128 5.689 5.69zm1.414-1.414l11.228-11.225-5.69-5.692-11.227 11.227 5.689 5.69zm9.768-21.148l-2.816 2.817 5.691 5.691 2.816-2.819-5.691-5.689z"/>
+  </svg>
+  <text x="35" y="30" font-family="sans-serif" font-size="24" font-weight="500" fill="white" >CodePencil</text>
+</svg>

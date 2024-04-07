@@ -1,0 +1,121 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: #131417;
+  font-family: "Poppins", sans-serif;
+}
+
+div[data-attribute="vertical"][data-type="Resizer"] {
+  background: rgba(255, 255, 255, 0.6);
+  opacity: 0.3;
+  width: 4px;
+  border-radius: 10px;
+  z-index: 2;
+  height: 100%;
+  border-right: none;
+  border-left: none;
+  transition: all 0.3s;
+}
+div[data-attribute="vertical"][data-type="Resizer"]:hover {
+  border-left: 3px solid rgba(255, 255, 255, 0.6);
+  border-right: 3px solid rgba(255, 255, 255, 0.6);
+}
+div[data-attribute="horizontal"][data-type="Resizer"] {
+  background: rgba(255, 255, 255, 0.6);
+  opacity: 0.3;
+  height: 4px;
+  z-index: 2;
+  border-top: none;
+  border-bottom: none;
+  transition: all 0.3s;
+}
+div[data-attribute="horizontal"][data-type="Resizer"]:hover {
+  border-top: 5px solid rgba(255, 255, 255, 0.6);
+  border-bottom: 5px solid rgba(255, 255, 255, 0.6);
+}
+
+.cm-editor ::-webkit-scrollbar {
+  width: 8px;
+  right: 0;
+  position: absolute;
+  top: 0;
+  height: 100%;
+  /* background: red; */
+}
+
+.cm-editor ::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.cm-editor ::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.cm-editor ::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+.ͼo {
+  @apply bg-secondary;
+}
+.split {
+  display: flex;
+  flex-direction: row;
+}
+
+.gutter {
+  background-color: #555;
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.gutter.gutter-horizontal {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==");
+  cursor: col-resize;
+}
+.gutter.gutter-vertical {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=");
+  cursor: row-resize;
+}
+
+/* -------------------custom scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-500;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-700;
+}
+
+/* shimmer effect */
+.shimmer {
+  background: linear-gradient(286deg, #2f3038, #6b6b6bae, #707070ae);
+  background-size: 180% 180%;
+  animation: shimmerEffect 1.3s ease infinite;
+}
+
+@keyframes shimmerEffect {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
