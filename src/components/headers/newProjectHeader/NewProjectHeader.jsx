@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { MdCheck, MdEdit } from "react-icons/md";
 import UserProfile from "../../xothers/UserProfile";
-
+import favicon from "/assets/favicon.svg";
 const NewProjectHeader = ({
   title,
   setTitle,
@@ -17,12 +17,13 @@ const NewProjectHeader = ({
   const [isEditing, setIsEditing] = useState(false);
 
   return (
-    <header className="text-white  min-h-[66px] h-[66px]  w-full bg-secondary flex justify-between items-center px-5">
-      <div className="flex items-center ">
+    <header className="text-white  min-h-[66px] h-[66px]  w-full bg-secondary flex justify-between items-center px-5 ">
+      <div className="flex items-center  gap-10">
         <Link to={"/"}>
-          <img src={logo} alt="" />
+          <img src={logo} alt="" className="max-sm:hidden" />
+          <img src={favicon} alt="" className="md:hidden h-[30px]" />
         </Link>
-        <div>
+        <div className="">
           <div className="flex items-center justify-center gap-2">
             <AnimatePresence>
               {isEditing ? (
@@ -104,7 +105,7 @@ const NewProjectHeader = ({
             SAVE
           </motion.div>
         )}
-        <UserProfile />
+        <div className="hidden md:block">{<UserProfile />}</div>
       </div>
     </header>
   );

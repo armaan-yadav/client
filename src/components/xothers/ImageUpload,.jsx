@@ -52,32 +52,41 @@ const ImageUpload = ({ user, setPhotoURL }) => {
         <button
           className="bg-red-400 py-2 hover:bg-red-500 duration-200 rounded-md w-full text-sm"
           onClick={() => {
-           removeUserPhoto();
+            removeUserPhoto();
           }}
         >
           Remove Profile Photo
         </button>
       )}
+
       <div className="flex flex-col w-full">
         <input
           type="file"
           name="fileUpload"
           onChange={(e) => setImg(e.target.files[0])}
         />
-        <button
-          className="bg-emerald-400 py-1 rounded-md my-2 hover:bg-emerald-500 duration-200"
-          onClick={() => {
-            uploadImage();
-          }}
-        >
-          Upload
-        </button>
-        <div className="h-[4px] w-full bg-white my-2">
-          <div
-            className={`h-full w-[${progress}%] bg-emerald-400 duration-400`}
-          ></div>
-        </div>
-        {progress + " %"}
+        {img && (
+          <>
+            <button
+              className="bg-emerald-400 py-1 rounded-md my-2 hover:bg-emerald-500 duration-200"
+              onClick={() => {
+                uploadImage();
+              }}
+            >
+              Upload
+            </button>
+            <div className="h-[4px] w-full bg-white my-2">
+              <div
+                className={`h-full w-[${parseInt(
+                  progress
+                )}%] bg-emerald-400 duration-400 ${
+                  progress == "0" && `hidden`
+                }`}
+              ></div>
+            </div>
+            {progress + " %"}
+          </>
+        )}
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import { HiChevronDoubleDown } from "react-icons/hi";
 const WebOutput = ({ setHideOutput, hideOutput, result }) => {
   return (
     <div
-      className={` ${
+      className={` m ${
         hideOutput ? `max-h-[0px]` : `max-h-full`
       } h-full w-full relative  duration-200 `}
     >

@@ -37,7 +37,7 @@ const Home = () => {
   }, [user]);
 
   return (
-    <div className="w-full h-full md:py-8 py-2 flex flex-col gap-4">
+    <div className="w-full h-full md:py-8 py-2 flex flex-col gap-4 pl-[10px]">
       <HomeHeader user={user} />
       <div className="w-full text-2xl text-primaryText px-3  font-bold my-2">
         My Projects
@@ -53,8 +53,12 @@ const Home = () => {
         ) : (
           <Projects projects={projects} />
         )
-      ) : (
+      ) : user ? (
         <ProjectsShimmer />
+      ) : (
+        <div className="text-white w-full h-full flex items-center justify-center">
+          sign up guruji
+        </div>
       )}
     </div>
   );

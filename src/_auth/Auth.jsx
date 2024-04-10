@@ -21,10 +21,10 @@ const Auth = () => {
         <img
           src={logo}
           alt="logo"
-          className="absolute top-3 left-3 opacity-50 h-10"
+          className="absolute top-3 left-3 opacity-50 md:h-10 h-12"
         />
       </Link>
-      <div className="md:w-[330px] w-[270px]  flex flex-col gap-3 justify-center">
+      <div className="md:w-[330px] w-[300px]  flex flex-col gap-3 justify-center">
         <Form showLogin={showLogin} />
 
         <p className="text-sm text-center">

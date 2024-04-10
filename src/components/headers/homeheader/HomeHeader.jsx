@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import UserProfile from "../../xothers/UserProfile";
 const HomeHeader = ({ user }) => {
   return (
-    <div className="w-full flex h-[46px] gap-2 px-4 md:px-12">
+    <div className="w-full flex h-[46px]  px-4 md:px-12   gap-2">
       <Searchbar />
       {/* profile section */}
       <div className="h-full   rounded-md flex items-center justify-center relative">
@@ -13,7 +13,7 @@ const HomeHeader = ({ user }) => {
           <Link to={"/auth"} className="h-full">
             <motion.div
               whileTap={{ scale: 0.8 }}
-              className="text-white bg-emerald-500 hover:bg-emerald-700 duration-200 px-3 h-full flex items-center rounded-md"
+              className="hidden md:flex text-white bg-emerald-500 hover:bg-emerald-700 duration-200 px-3 h-full items-center rounded-md"
             >
               SignUp
             </motion.div>

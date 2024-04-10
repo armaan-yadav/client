@@ -47,10 +47,10 @@ const App = () => {
   ) : (
     <>
       <ToastContainer position="bottom-right" />
-      <div className="w-[100vw] h-[100vh] flex items-start justify-start overflow-hidden">
+      <div className="w-[100vw] h-[100vh] flex items-start justify-start overflow-hidden ">
         <Routes>
           <Route path="/auth" element={<Auth />} />
-          {/* <Route element={<PrivateRoutes />}> */}
+          <Route element={<PrivateRoutes />}>
           <Route element={<RootLayout />}>
             <Route index path="/" element={<Home user={user} />} />
             <Route path="/explore" element={<Explore />} />
@@ -61,7 +61,7 @@ const App = () => {
             element={<NewProject data={{}} editable={true} />}
           />
           <Route path="/project/:id" element={<ProjectWithId />} />
-          {/* </Route> */}
+          </Route>
         </Routes>
       </div>
     </>

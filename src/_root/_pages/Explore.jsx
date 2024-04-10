@@ -33,7 +33,7 @@ const Explore = () => {
   }, [user]);
 
   return user ? (
-    <div className="w-full h-full md:py-8 py-2 flex flex-col gap-4">
+    <div className="w-full h-full md:py-8 py-2 flex flex-col gap-4 pl-[10px]">
       <HomeHeader user={user} />
 
       <div className="w-full text-2xl text-primaryText font-bold px-3 my-2">
@@ -47,7 +47,9 @@ const Explore = () => {
       )}
     </div>
   ) : (
-    <div>hehe</div>
+    <div className="text-white h-full w-full  flex items-center justify-center">
+      sign up karo guruji
+    </div>
   );
 };
 

@@ -6,6 +6,7 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import { motion } from "framer-motion";
 import { fadeInOut } from "../../animatons/index";
 import { Link } from "react-router-dom";
+import { FaCaretDown } from "react-icons/fa";
 const UserProfile = ({}) => {
   const [showLogoutMenu, setShowLogoutMenu] = useState(false);
   const user = useSelector((state) => state.user.user);
@@ -15,7 +16,7 @@ const UserProfile = ({}) => {
   };
   return (
     <>
-      <div className="flex h-full items-center justify-center gap-2 relative">
+      <div className="flex h-full items-center justify-center gap-2 relative ">
         {user ? (
           user.photoURL ? (
             <img
@@ -40,10 +41,10 @@ const UserProfile = ({}) => {
             </motion.div>
           </Link>
         )}
-        <RiArrowDropDownLine
-          className={`text-[40px]  text-white ${
+        <FaCaretDown
+          className={`h-full w-[30px] px-1 max-sm:hidden   cursor-pointer  text-white ${
             showLogoutMenu && `rotate-180`
-          } duration-200 bg-secondary rounded-lg`}
+          } duration-200  rounded-lg`}
           onClick={() => {
             setShowLogoutMenu(!showLogoutMenu);
           }}
@@ -55,13 +56,11 @@ const UserProfile = ({}) => {
             className="absolute top-[100%] right-0 text-primaryText w-[150%] flex flex-col bg-secondary  gap-1.5 rounded-lg overflow-hidden py-1 z-[100]"
           >
             <button className="px-1 border-b-[1px]  hover:bg-emerald-500 hover:text-white  duration-200">
-              Projects
+              <Link to={"/"}> Projects</Link>
             </button>
+
             <button className="px-1 border-b-[1px]  hover:bg-emerald-500 hover:text-white  duration-200">
-              Collections
-            </button>
-            <button className="px-1 border-b-[1px]  hover:bg-emerald-500 hover:text-white  duration-200">
-              Profile
+              <Link to={"/profile"}>Profile</Link>
             </button>
             <button
               className="px-1 border-b-[1px]  hover:bg-emerald-500 hover:text-white  duration-200 "
